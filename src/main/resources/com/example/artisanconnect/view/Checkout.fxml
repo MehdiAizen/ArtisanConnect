@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.artisanconnect.controller.CheckoutController"
+            prefWidth="600" prefHeight="400"
+            stylesheets="@../styles/styles.css">
+
+    <VBox spacing="20" alignment="TOP_CENTER" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+        <Label text="ArtisanConnect - Paiement" styleClass="title-label"/>
+
+        <VBox styleClass="form-section" spacing="15">
+            <GridPane hgap="10" vgap="10">
+                <Label text="Nom complet :" styleClass="form-label"/>
+                <TextField fx:id="fullNameField" promptText="Ex: Ali Ben Salah" styleClass="form-field"/>
+
+                <Label text="Adresse :" styleClass="form-label" GridPane.rowIndex="1"/>
+                <TextField fx:id="addressField" promptText="Ex: 123 Rue de Tunis" styleClass="form-field" GridPane.rowIndex="1"/>
+
+                <Label text="Carte bancaire :" styleClass="form-label" GridPane.rowIndex="2"/>
+                <TextField fx:id="cardNumberField" promptText="16 chiffres" styleClass="form-field" GridPane.rowIndex="2"/>
+
+                <!-- Ajout du PasswordField -->
+                <Label text="Mot de passe client :" styleClass="form-label" GridPane.rowIndex="3"/>
+                <PasswordField fx:id="passwordField" promptText="client123" styleClass="form-field" GridPane.rowIndex="3"/>
+            </GridPane>
+        </VBox>
+
+        <Button fx:id="confirmButton" text="Confirmer le paiement" styleClass="primary-button" onAction="#handlePayment"/>
+    </VBox>
+</AnchorPane>

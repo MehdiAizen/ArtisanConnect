@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.artisanconnect.controller.OrderConfirmationController"
+            prefWidth="600" prefHeight="400"
+            stylesheets="@../styles/styles.css">
+
+    <VBox spacing="25" alignment="CENTER">
+        <Label text="Confirmation de commande" styleClass="title-label"/>
+        <Label fx:id="orderIdLabel" styleClass="order-id-label"/>
+        <Label fx:id="statusLabel" styleClass="status-label"/>
+        <Button text="Retour à l'accueil" styleClass="primary-button" onAction="#returnToHome"/>
+    </VBox>
+</AnchorPane>

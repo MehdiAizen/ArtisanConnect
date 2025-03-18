@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.Image?>       <!-- Import ajouté -->
+<?import javafx.scene.image.ImageView?>   <!-- Import ajouté -->
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.artisanconnect.controller.CartController"
+            stylesheets="@../styles/styles.css">
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <Label text="Mon Panier" styleClass="title-label">
+                <font>
+                    <Font name="System Bold" size="24"/>
+                </font>
+            </Label>
+
+            <TableView fx:id="cartTableView" styleClass="cart-table">
+                <columns>
+                    <TableColumn text="Produit" fx:id="nameColumn"/>
+                    <TableColumn text="Artisan" fx:id="artisanColumn"/>
+                    <TableColumn text="Prix" fx:id="priceColumn"/>
+                    <TableColumn text="Quantité" fx:id="quantityColumn"/>
+                    <TableColumn text="Total" fx:id="totalColumn"/>
+                    <TableColumn text="Actions" fx:id="actionColumn"/>
+                </columns>
+            </TableView>
+
+            <!-- Section panier vide -->
+            <VBox fx:id="emptyCartBox" alignment="CENTER" spacing="20" visible="false">
+                <ImageView fx:id="emptyCartImageView" fitHeight="150" fitWidth="150"> <!-- Ajoutez fx:id -->
+                    <image>
+                        <Image url="@../../../../com/example/artisanconnect/images/empty_cart.png"/>
+
+                    </image>
+                </ImageView>
+                <Label text="Votre panier est vide" styleClass="empty-cart-label"/>
+                <Button fx:id="continueShoppingButton" text="Continuer les achats" styleClass="secondary-button"/>
+            </VBox>
+
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Label text="Total :" styleClass="total-label"/>
+                <Label fx:id="totalPriceLabel" text="0,00 DT" styleClass="total-price-label"/>
+            </HBox>
+
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Button fx:id="clearCartButton" text="Vider le panier" styleClass="secondary-button"/>
+                <Button fx:id="checkoutButton" text="Passer la commande" styleClass="primary-button"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.artisanconnect.controller.OrderTrackingController"
+            prefWidth="600" prefHeight="400"
+            stylesheets="@../styles/styles.css">
+
+    <VBox spacing="20" alignment="CENTER" AnchorPane.topAnchor="20">
+        <Label text="Suivi de commande" styleClass="title-label"/>
+
+        <VBox spacing="10" alignment="CENTER">
+            <Label fx:id="orderIdLabel" styleClass="order-id-label"/>
+            <Label fx:id="statusLabel" styleClass="status-label"/>
+        </VBox>
+
+        <!-- Contrôles artisan uniquement -->
+        <HBox fx:id="artisanControls" spacing="10" alignment="CENTER">
+            <PasswordField fx:id="artisanPasswordField" promptText="Mot de passe artisan"/>
+            <ComboBox fx:id="statusComboBox" promptText="Sélectionner un statut"/>
+            <Button text="Mettre à jour le statut"
+                    styleClass="primary-button"
+                    onAction="#handleUpdateStatus"/>
+        </HBox>
+
+        <Button text="Retour à l'accueil"
+                styleClass="secondary-button"
+                onAction="#handleReturnToHome"/>
+    </VBox>
+</AnchorPane>
